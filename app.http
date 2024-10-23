@@ -1,0 +1,50 @@
+### Step 1: Register a User
+POST http://localhost:3000/todos/register/
+Content-Type: application/json
+
+{
+    "username": "rajesh",
+    "password": "7337094089.n",
+    "name": "Rajesh Nandhan",
+    "image": "image_url_here"
+}
+
+### Step 2: Login the User
+POST http://localhost:3000/todos/login
+Content-Type: application/json
+
+{
+    "username": "rajesh",
+    "password": "7337094089.n"
+}
+
+### Step 3: Get All Todos (Requires Authentication)
+GET http://localhost:3000/todos/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTcyOTY5MTczMCwiZXhwIjoxNzMyMjgzNzMwfQ.r8z8mV6dFHcgaWFHK0Q8nERU6bYa8l1LIYRZb5tNxYw
+
+### Step 4: Create a New Todo (Requires Authentication)
+POST http://localhost:3000/todos/todo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTcyOTY5MTczMCwiZXhwIjoxNzMyMjgzNzMwfQ.r8z8mV6dFHcgaWFHK0Q8nERU6bYa8l1LIYRZb5tNxYw
+
+{
+    "todo_text": "Learn SQL"
+}
+
+### Step 5: Update a Todo (Requires Authentication)
+PUT http://localhost:3000/todos/update/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTcyOTY5MTczMCwiZXhwIjoxNzMyMjgzNzMwfQ.r8z8mV6dFHcgaWFHK0Q8nERU6bYa8l1LIYRZb5tNxYw
+
+{
+    "todo_text": "Learn Javascript",
+    "is_checked": false,
+    "is_edit_clicked": false,
+    "user_id": 4
+}
+
+### Step 6: Delete a Todo (Requires Authentication)
+DELETE http://localhost:3000/todos/delete/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTcyOTY5MTczMCwiZXhwIjoxNzMyMjgzNzMwfQ.r8z8mV6dFHcgaWFHK0Q8nERU6bYa8l1LIYRZb5tNxYw
